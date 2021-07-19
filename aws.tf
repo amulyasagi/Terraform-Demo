@@ -4,10 +4,13 @@ provider "aws" {
 }
 
 resource "aws_instance" "web" {
-  ami           = "ami-0dc2d3e4c0f9ebd18"
+  ami           = "ami-0b0af3577fe5e3532"
   instance_type = "t3.micro"
+  availability_zone = "us-east-1a"
+  key_name = "KP-Test"
 
   tags = {
-    Name = "HelloWorld"
+    Name = "Hello"
+	Environment = "Dev"
   }
 }
