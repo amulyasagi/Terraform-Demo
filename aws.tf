@@ -8,6 +8,7 @@ resource "aws_instance" "web" {
   instance_type = "t3.micro"
   availability_zone = "us-east-1a"
   key_name = "KP-Test"
+  vpc_security_group_ids = [aws_security_group.SG_New.id]
 
   tags = {
     Name = "Hello"
